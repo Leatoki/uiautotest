@@ -1,4 +1,4 @@
-package uiautotest.init;
+package org.leatoki.uiautotest.init;
 
 import org.openqa.selenium.interactions.Actions;
 
