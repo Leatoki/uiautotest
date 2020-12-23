@@ -1,11 +1,11 @@
 package org.leatoki.uiautotest.init;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.*;
 import java.util.Properties;
 
+/**
+ * 测试配置参数初始化类
+ */
 public class ConfigInit {
     /**
      * 获取配置文件配置项值
@@ -14,18 +14,16 @@ public class ConfigInit {
      * @return 配置项值
      */
     public static String getProperty(String config) throws IOException {
-        Logger logger = LogManager.getLogger();
-
         // 配置文件路径
         String filepath = "src/main/resources/config.properties";
         String property;
 
-        logger.info("获取 " + config + " 配置信息 Start");
+        LoggerInit.loggerInit().info("获取 " + config + " 配置信息 Start");
         InputStream in = new BufferedInputStream(new FileInputStream(filepath));
         Properties p = new Properties();
         p.load(in);
         property = p.getProperty(config);
-        logger.info("获取 " + config + " 配置信息 End");
+        LoggerInit.loggerInit().info("获取 " + config + " 配置信息 End");
 
         return property;
     }
