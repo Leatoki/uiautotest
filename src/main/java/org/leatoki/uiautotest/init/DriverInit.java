@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 
 /**
@@ -18,9 +17,9 @@ public class DriverInit {
      * 谷歌浏览器驱动
      *
      * @return driver
-     * @throws IOException 异常
+     * @throws Exception 异常
      */
-    public static WebDriver chromeDriverinit() throws IOException {
+    public static WebDriver chromeDriverInit() throws Exception {
         LoggerInit.loggerInit().info("配置浏览器驱动文件路径 Start");
         System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
         LoggerInit.loggerInit().info("配置浏览器驱动文件路径 End");
@@ -28,7 +27,7 @@ public class DriverInit {
         LoggerInit.loggerInit().info("========== 根据驱动是否加载配置参数新建驱动 Start ==========");
 
         // 获取驱动配置
-        if ("1".equals(ConfigInit.getProperty("driveroption"))) {
+        if ("1".equals(ConfigInit.getProperty("driverOption"))) {
             ChromeOptions options = new ChromeOptions();
             HashMap<String, Object> config = new HashMap<>();
 
@@ -53,7 +52,7 @@ public class DriverInit {
             LoggerInit.loggerInit().info("根据配置新建驱动 Start");
             driver = new ChromeDriver(options);
             LoggerInit.loggerInit().info("根据配置新建驱动 End");
-        } else if ("0".equals(ConfigInit.getProperty("driveroption"))) {
+        } else if ("0".equals(ConfigInit.getProperty("driverOption"))) {
             LoggerInit.loggerInit().info("无配置新建驱动 Start");
             driver = new ChromeDriver();
             LoggerInit.loggerInit().info("无配置新建驱动 End");
