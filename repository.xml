@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<localRepository>D:\repository\uiautotest</localRepository>
+	<!-- <mirrors>
+		<mirror>
+			<id>alimaven</id>
+			<name>aliyun maven</name>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<mirrorOf>central</mirrorOf>
+		</mirror>
+	</mirrors> -->
+</settings>
